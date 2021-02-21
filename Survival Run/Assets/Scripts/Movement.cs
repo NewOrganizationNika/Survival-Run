@@ -23,4 +23,10 @@ public class Movement : MonoBehaviour
         var player = transform;
         player.position += player.right * (speed * Time.deltaTime);
     }
+
+    public void CancelEverything()
+    {
+        StopAllCoroutines();
+        CancelInvoke();
+    }
 }

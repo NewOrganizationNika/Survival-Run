@@ -2,8 +2,15 @@
 
 public class PlayerInput : MonoBehaviour
 {
+    private bool playing = false;
+
+    public void StartPlaying() => playing = true;
+
+    public void StopPlaying() => playing = false;
+
     private void Update()
     {
+        if (!playing) return;
         if (InputController.Up)
         {
             var transform1 = transform;
