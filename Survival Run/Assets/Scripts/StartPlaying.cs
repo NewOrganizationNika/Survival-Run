@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class StartPlaying : MonoBehaviour
 {
@@ -15,5 +17,16 @@ public class StartPlaying : MonoBehaviour
     public void StartPlay()
     {
         Time.timeScale = 1;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+            Button();
+    }
+
+    private void Button()
+    {
+        GetComponent<Button>().onClick.Invoke();
     }
 }
